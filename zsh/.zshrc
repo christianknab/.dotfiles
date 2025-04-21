@@ -3,6 +3,15 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Applications/flutter/bin
 export PATH=$PATH:/Applications/KLayout/klayout.app/Contents/MacOS
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+export PATH="/Users/christianknab/.rubies/ruby-3.4.2/bin:$PATH"
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias cse114='cd ~/Documents/github/ucsc/cse114/'
+alias cse121='cd ~/Documents/github/ucsc/cse121/'
+alias build='idf.py build'
+alias flash='idf.py flash'
+alias monitor='idf.py monitor'
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -123,3 +132,9 @@ source $ZSH/oh-my-zsh.sh
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/christianknab/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/christianknab/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/christianknab/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/christianknab/google-cloud-sdk/completion.zsh.inc'; fi
