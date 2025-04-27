@@ -1,3 +1,11 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # installing go: https://24ankitw.medium.com/installing-go-lang-on-mac-homebrew-ee11cc7271fb
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -12,12 +20,19 @@ alias cse121='cd ~/Documents/github/ucsc/cse121/'
 alias build='idf.py build'
 alias flash='idf.py flash'
 alias monitor='idf.py monitor'
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+
+
+dev() {
+  local repo_root
+  repo_root=$(git rev-parse --show-toplevel) || return 1
+
+  local rel_path
+  rel_path=$(git rev-parse --show-prefix)
+
+  devcontainer up --workspace-folder "$repo_root" || return 1
+
+  devcontainer exec --workspace-folder "$repo_root" /bin/bash -c "cd '$rel_path' && exec /bin/bash"
+}
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
