@@ -18,7 +18,10 @@ return {
             desc = "Open mini.files (cwd)",
         },
     },
-    config = function()
-        require("mini.icons").setup()
-    end,
+    config = {
+        windows = { preview = true, width_preview = 50 },
+        function()
+            require("mini.icons").setup()
+        end,
+    },
 }
