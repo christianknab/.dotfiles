@@ -10,7 +10,7 @@ fi
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Applications/flutter/bin
-export PATH=$PATH:/Applications/KLayout/klayout.app/Contents/MacOS
+# export PATH=$PATH:/Applications/KLayout/klayout.app/Contents/MacOS
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 export PATH="/Users/christianknab/.rubies/ruby-3.4.2/bin:$PATH"
@@ -20,6 +20,7 @@ alias cse121='cd ~/Documents/github/ucsc/cse121/'
 alias build='idf.py build'
 alias flash='idf.py flash'
 alias monitor='idf.py monitor'
+alias kaliber='cd ~/Documents/kaliber'
 
 
 dev() {
@@ -154,3 +155,5 @@ if [ -f '/Users/christianknab/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/c
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/christianknab/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/christianknab/google-cloud-sdk/completion.zsh.inc'; fi
 
+
+. "$HOME/.local/bin/env"
