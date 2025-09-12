@@ -112,6 +112,24 @@ return {
             desc = "Git Browse",
             mode = { "n", "v" },
         },
+        -- toggle auto formatting
+        {
+            "<leader>tf",
+            function()
+                Snacks.toggle
+                    .new({
+                        id = "Format on Save",
+                        name = "Format on Save",
+                        get = function()
+                            return vim.g.autoformat
+                        end,
+                        set = function(_)
+                            vim.g.autoformat = not vim.g.autoformat
+                        end,
+                    })
+                    :map("<leader>tf")
+            end,
+        },
         -- -- Terminal
         -- {
         --     "<c-/>",

@@ -25,7 +25,24 @@ return {
             use_tabs = false, -- If supported by the formatter
         },
         -- Set up format-on-save
-        format_on_save = { timeout_ms = 500 },
+        format_on_save = function(bufnr)
+            if vim.g.autoformat then
+                local disable_filetypes = {}
+                local lsp_format_opt
+                if disable_filetypes[vim.bo[bufnr].filetype] then
+                    lsp_format_opt = "never"
+                else
+                    lsp_format_opt = "fallback"
+                end
+                return {
+                    timeout_ms = 500,
+                    lsp_format = lsp_format_opt,
+                }
+            else
+                return
+            end
+        end,
+        -- format_on_save = { false },
         -- Customize formatters
         formatters = {
             shfmt = {
