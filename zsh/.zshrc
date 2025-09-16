@@ -12,6 +12,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Applications/flutter/bin
 # export PATH=$PATH:/Applications/KLayout/klayout.app/Contents/MacOS
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="/Library/Frameworks/GStreamer.framework/Versions/1.0/bin${PATH:+:$PATH}"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 export PATH="/Users/christianknab/.rubies/ruby-3.4.2/bin:$PATH"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
@@ -157,3 +158,4 @@ if [ -f '/Users/christianknab/google-cloud-sdk/completion.zsh.inc' ]; then . '/U
 
 
 . "$HOME/.local/bin/env"
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
