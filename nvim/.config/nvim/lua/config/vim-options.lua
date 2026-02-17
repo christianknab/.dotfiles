@@ -35,3 +35,6 @@ map({ "i", "n", "s" }, "<esc>", function()
     vim.cmd("noh")
     return "<esc>"
 end, { expr = true, desc = "Escape and Clear hlsearch" })
+map("n", "<leader>cd", function ()
+	vim.diagnostic.open_float()
+end, {desc = "Toggle diagnostic hover",})

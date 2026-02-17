@@ -36,6 +36,16 @@ return {
                 underline = true,
                 update_in_insert = false,
             })
+            vim.lsp.config("rust_analyzer", {
+                -- Server-specific settings. See `:help lsp-quickstart`
+                settings = {
+                    ["rust-analyzer"] = {
+                        cargo = {
+                            allFeatures = true,
+                        },
+                    },
+                },
+            })
         end,
     },
 }

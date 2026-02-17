@@ -10,18 +10,13 @@ fi
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Applications/flutter/bin
-# export PATH=$PATH:/Applications/KLayout/klayout.app/Contents/MacOS
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="/Library/Frameworks/GStreamer.framework/Versions/1.0/bin${PATH:+:$PATH}"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 export PATH="/Users/christianknab/.rubies/ruby-3.4.2/bin:$PATH"
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias cse114='cd ~/Documents/github/ucsc/cse114/'
-alias cse121='cd ~/Documents/github/ucsc/cse121/'
-alias build='idf.py build'
-alias flash='idf.py flash'
-alias monitor='idf.py monitor'
-alias kaliber='cd ~/Documents/kaliber'
+alias auri='cd ~/Documents/estincelle/repos/auri/'
+alias rs-matter='cd ~/Documents/estincelle/repos/rs-matter/'
+alias repos='cd ~/Documents/repos/'
 
 
 dev() {
@@ -46,7 +41,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -123,6 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
+export EDITOR='nvim'
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
@@ -144,8 +140,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" != "vscode" ] && [ -z "$ZED" ]; then tmux attach -t main || tmux new -s main; fi
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PATH:$PYENV_ROOT/bin"
@@ -160,3 +154,6 @@ if [ -f '/Users/christianknab/google-cloud-sdk/completion.zsh.inc' ]; then . '/U
 
 . "$HOME/.local/bin/env"
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
