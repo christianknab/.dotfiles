@@ -14,10 +14,12 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="/Library/Frameworks/GStreamer.framework/Versions/1.0/bin${PATH:+:$PATH}"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 export PATH="/Users/christianknab/.rubies/ruby-3.4.2/bin:$PATH"
+
 alias auri='cd ~/Documents/estincelle/repos/auri/'
 alias rs-matter='cd ~/Documents/estincelle/repos/rs-matter/'
 alias repos='cd ~/Documents/repos/'
 
+alias cat='bat'
 
 dev() {
   local repo_root
