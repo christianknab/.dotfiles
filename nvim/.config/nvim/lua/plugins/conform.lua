@@ -18,6 +18,7 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
+            nix = { "nixpkgs_fmt" },
         },
         default_format_opts = {
             lsp_format = "fallback",
@@ -42,7 +43,7 @@ return {
                 return
             end
         end,
-        -- format_on_save = { false },
+        -- format_on_save = { true },
         -- Customize formatters
         formatters = {
             shfmt = {

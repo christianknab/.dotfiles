@@ -3,11 +3,14 @@ M = {}
 
 M.headers = {
     { [[
-  ▗▄▄▖▐▌    ▄▄▄ ▄  ▄▄▄  ■  ▄ ▗▞▀▜▌▄▄▄▄  
- ▐▌   ▐▌   █    ▄ ▀▄▄▗▄▟▙▄▖▄ ▝▚▄▟▌█   █ 
- ▐▌   ▐▛▀▚▖█    █ ▄▄▄▀ ▐▌  █      █   █ 
- ▝▚▄▄▖▐▌ ▐▌     █      ▐▌  █            
-                       ▐▌               
+                       ,,                    
+                       db                    
+                                             
+`7MMpMMMb.`7M'   `MF'`7MM  `7MMpMMMb.pMMMb.  
+  MM    MM  VA   ,V    MM    MM    MM    MM  
+  MM    MM   VA ,V     MM    MM    MM    MM  
+  MM    MM    VVV      MM    MM    MM    MM  
+.JMML  JMML.   W     .JMML..JMML  JMML  JMML.
 	]], },
 }
 

@@ -123,12 +123,13 @@ return {
                         get = function()
                             return vim.g.autoformat
                         end,
-                        set = function(_)
-                            vim.g.autoformat = not vim.g.autoformat
+                        set = function(state)
+                            vim.g.autoformat = state
                         end,
                     })
-                    :map("<leader>tf")
+                    :toggle()
             end,
+            desc = "Toggle Format on Save",
         },
         -- -- Terminal
         -- {
