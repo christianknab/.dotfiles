@@ -41,7 +41,14 @@ fi
 curl -L -o ~/.local/bin/nvim "$NVIM_URL"
 chmod +x ~/.local/bin/nvim
 
-mv nvim-linux-"$ARCH".appimage ~/.local/bin/nvim
+if [ "$ARCH" = "x86_64" ]; then
+	mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
+elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
+	mv nvim-linux-arm64.appimage ~/.local/bin/nvim
+else
+    echo "Error: Unsupported architecture: $ARCH"
+    exit 1
+fi
 
 # Ensure ~/.local/bin is in PATH for the rest of the script/session
 export PATH="$HOME/.local/bin:$PATH"
