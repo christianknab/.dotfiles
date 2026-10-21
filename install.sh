@@ -6,6 +6,7 @@ cd "$DOTFILES_DIR"
 
 sudo apt update
 sudo apt install -y stow zsh tmux lazygit bat git rsync curl wget libfuse2
+sudo apt-get install ripgrep
 
 # Ubuntu installs 'bat' as 'batcat' and 'eza' isn't always in old standard apt repos.
 if [ -x /usr/bin/batcat ] && [ ! -e ~/.local/bin/bat ]; then
