@@ -41,7 +41,7 @@ fi
 curl -L -o ~/.local/bin/nvim "$NVIM_URL"
 chmod +x ~/.local/bin/nvim
 
-mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
+mv nvim-linux-"$ARCH".appimage ~/.local/bin/nvim
 
 # Ensure ~/.local/bin is in PATH for the rest of the script/session
 export PATH="$HOME/.local/bin:$PATH"
