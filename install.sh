@@ -5,7 +5,7 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 sudo apt update
-sudo apt install -y stow zsh tmux neovim bat git rsync curl wget
+sudo apt install -y stow zsh tmux bat git rsync curl wget libfuse2
 
 # Ubuntu installs 'bat' as 'batcat' and 'eza' isn't always in old standard apt repos.
 if [ -x /usr/bin/batcat ] && [ ! -e ~/.local/bin/bat ]; then
@@ -23,6 +23,15 @@ if ! command -v eza &> /dev/null; then
     sudo apt update
     sudo apt install -y eza
 fi
+
+echo "==> Downloading and installing latest Neovim AppImage..."
+mkdir -p ~/.local/bin
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
+mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
+
+# Ensure ~/.local/bin is in PATH for the rest of the script/session
+export PATH="$HOME/.local/bin:$PATH"
 
 echo "==> Setting up Zsh plugins and themes..."
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"

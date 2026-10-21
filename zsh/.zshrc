@@ -7,9 +7,8 @@ ZSH_THEME="" # disabled since we are using Powerlevel10k manually
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${HOME}/.zsh/zsh-nix-shell/nix-shell.plugin.zsh
+source ${HOME}/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
